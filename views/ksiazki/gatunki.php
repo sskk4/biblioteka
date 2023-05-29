@@ -16,7 +16,7 @@ include('../shared/navbar.php');
 <div class="container ">
     <h2 class='title mx-1'> Gatunki </h2>
    
-    <button type="button" class="btn btn-right btn-dark  mx-1" onclick="window.location.href='create.gatunek.php'">Dodaj wydawnictwo</button>
+    <button type="button" class="btn btn-right btn-dark  mx-1" onclick="window.location.href='create.gatunek.php'">Dodaj gatunek</button>
     <button type="button" class="btn btn-right btn-outline-success mx-1" onclick="window.location.href='ksiazki.php'">Książki</button>
     <button type="button" class="btn btn-right btn-outline-dark mx-1" onclick="window.location.href='autorzy.php'">Autorzy</button>
     <button type="button" class="btn btn-right btn-outline-dark mx-1 active" onclick="window.location.href='gatunki.php'">Gatunki</button>

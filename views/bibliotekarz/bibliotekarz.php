@@ -1,27 +1,27 @@
 <!doctype html>
 
 <?php
-$pageTitle = 'czytelnicy';
+$pageTitle = 'bibliotekarz';
 include('../shared/header.php');
 ?>
 
   <body>
 
 <?php
-$currentPage = 'czytelnicy';
+$currentPage = 'bibliotekarz';
 include('../shared/navbar.php');
 ?>
 
 
 <div class="container ">
-    <h2 class='title mx-1'> Czytelnicy </h2>
+    <h2 class='title mx-1'> Bibliotekarz </h2>
    
-    <button type="button" class="btn btn-right btn-dark ml-1 mx-1" onclick="window.location.href='create.czytelnicy.php'">Dodaj czytelnika</button>
+    <button type="button" class="btn btn-right btn-dark ml-1 mx-1" onclick="window.location.href='create.bibliotekarz.php'">Dodaj bibliotekarza</button>
 
     <table class="table table-striped table-hover mt-sm-1 ">
         <thead class='bg-dark text-light rounded-1'>
         <tr>
-        <th class='rounded-start'>ID Czytelnika</th>
+        <th class='rounded-start'>ID bibliotekarz</th>
             <th>Imię</th>
             <th>Nazwisko </th>
             <th>Pesel</th>
@@ -33,13 +33,13 @@ include('../shared/navbar.php');
 
     <?php
 
-    require "../../controllers/CzytelnicyController.php";
+    require "../../controllers/BibliotekarzController.php";
 
-    use controllers\CzytelnicyController;
+    use controllers\BibliotekarzController;
 
-    $czytelnicyController = new CzytelnicyController();
-    $czytelnicy = 'czytelnik';
-    $czytelnicyController->show($czytelnicy);
+    $bibliotekarzController = new BibliotekarzController();
+    $bibliotekarz = 'bibliotekarz';
+    $bibliotekarzController->show($bibliotekarz);
 
 ?>
 

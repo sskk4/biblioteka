@@ -1,8 +1,7 @@
 <!doctype html>
-<!doctype html>
 
 <?php
-$pageTitle = 'wypozyczenia';
+$pageTitle = 'wypożyczenia';
 include('../shared/header.php');
 ?>
 
@@ -15,67 +14,44 @@ include('../shared/navbar.php');
 
 
 <div class="container ">
-    <h2 class='title'> Wypożyczenia </h2>
-    <button type="button" class="btn btn-right btn-dark">Dodaj wypożyczenie</button>
+    <h2 class='title mx-1'> Wypożyczenia </h2>
+   
+    <button type="button" class="btn btn-right btn-dark ml-1 mx-1" onclick="window.location.href='create.wypozyczenia.php'">Dodaj wypożyczenie</button>
+    <button type="button" class="btn btn-right btn-outline-dark mx-1" onclick="window.location.href='dostepneksiazki.php'">Dostępne książki</button>
 
-
-    <table class="table table-striped table-hover">
-        <thead class='thead-black'>
+    <table class="table table-striped table-hover mt-sm-1 ">
+        <thead class='bg-dark text-light rounded-1'>
         <tr>
-            <th>ID wypożyczenia</th>
+            <th class='rounded-start'>ID wypożyczenia</th>
             <th>Imie i nazwisko bibliotekarza</th>
             <th>Imie i nazwisko czytelnika </th>
             <th>Nazwa książki</th>
             <th>Data wypożyczenia </th>
-            <th>Data oddania </th>
-            <th> </th>
+            <th >Data oddania </th>
+            <th class='rounded-end'> </th>
         </tr>
     </thead>
     <tbody>
 
     <?php
 
-    require "../../php/connect.php";
+    require "../../controllers/WypozyczeniaController.php";
 
-$sql = "SELECT * FROM Wypożyczenie";
+    use controllers\WypozyczeniaController;
 
-$stmt = $conn->prepare($sql);
-if (!$stmt) {
-    echo "Błąd w zapytaniu: " . $conn->errorInfo();
-    die();
-}
-$stmt->execute();
+    $wypozyczeniaController = new WypozyczeniaController();
+    $wypozyczenia = 'wypożyczenie';
+    $wypozyczeniaController->show($wypozyczenia);
 
-
-$resultSet = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-if (count($resultSet) === 0) {
-    echo "Brak danych do wyświetlenia.";
-} else {
-  foreach ($resultSet as $row) {
-    echo "<tr>";
-    echo "<td>" . $row['id_wypożyczenie'] . "</td>";
-    echo "<td>" . $row['id_bibliotekarz'] . "</td>";
-    echo "<td>" . $row['id_czytelnik'] . "</td>";
-    echo "<td>" . $row['id_książka'] . "</td>";
-    echo "<td>" . $row['data_wypożyczenia'] . "</td>";
-    echo "<td>" . $row['data_zwrotu'] . "</td>";
-    echo '<td> <button type="button" class="btn btn-outline-dark">Edytuj</button> </td>';
-    echo "</tr>";
-  }
-}
-$conn = null;
 ?>
 
     </tbody>
-      </table>
-   
-  </div>
- 
+  </table>
+</div>
 
-  <?php
+<?php
 include('../shared/footer.php');
 ?>
-
+ 
 </body>
 </html>
