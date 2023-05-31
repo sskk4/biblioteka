@@ -17,7 +17,10 @@ include('../shared/navbar.php');
     <h2 class='title mx-1'> Wypożyczenia </h2>
    
     <button type="button" class="btn btn-right btn-dark ml-1 mx-1" onclick="window.location.href='create.wypozyczenia.php'">Dodaj wypożyczenie</button>
+    <button type="button" class="btn btn-right btn-dark mx-1" onclick="window.location.href='oddajksiazki.php'">Oddaj książkę</button>
     <button type="button" class="btn btn-right btn-outline-dark mx-1" onclick="window.location.href='dostepneksiazki.php'">Dostępne książki</button>
+    
+
 
     <table class="table table-striped table-hover mt-sm-1 ">
         <thead class='bg-dark text-light rounded-1'>
