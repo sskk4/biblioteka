@@ -16,7 +16,7 @@ include('../shared/navbar.php');
 <div class="container ">
     <h2 class='title mx-1'> Autorzy </h2>
    
-    <button type="button" class="btn btn-right btn-dark  mx-1" onclick="window.location.href='create.wydawnictwo.php'">Dodaj autora</button>
+    <button type="button" class="btn btn-right btn-dark  mx-1" onclick="window.location.href='create.autor.php'">Dodaj autora</button>
     <button type="button" class="btn btn-right btn-outline-success mx-1" onclick="window.location.href='ksiazki.php'">Książki</button>
     <button type="button" class="btn btn-right btn-outline-dark mx-1 active" onclick="window.location.href='autorzy.php'">Autorzy</button>
     <button type="button" class="btn btn-right btn-outline-dark mx-1" onclick="window.location.href='gatunki.php'">Gatunki</button>
@@ -39,7 +39,7 @@ include('../shared/navbar.php');
     use controllers\KsiazkiController;
 
     $ksiazkiController = new KsiazkiController();
-    $autor = 'autor';
+    $autor = 'autorzy';
     $ksiazkiController->show($autor);
 
 ?>
